@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajeshwari R | Portfolio</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
+    body { background:linear-gradient(120deg,#1a1a2e,#16213e); color:#fff; transition:0.4s; }
+    a { text-decoration:none; color:inherit; }
+
+    /* HEADER */
+    header {
+      position:fixed; top:0; width:100%; display:flex; justify-content:space-between; align-items:center;
+      padding:15px 50px; z-index:1000;
+      background:rgba(255,255,255,0.05); backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    header h2 { color:#00f5d4; }
+    nav a { margin:0 15px; position:relative; }
+    nav a::after { content:""; position:absolute; width:0; bottom:-5px; left:0; height:2px; background:#00f5d4; transition:0.3s; }
+    nav a:hover::after { width:100%; }
+    .toggle-btn { background:#00f5d4; padding:8px 15px; border-radius:20px; color:#111; cursor:pointer; }
+
+    /* HERO */
+    .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    .hero h1 { font-size:3rem; margin-bottom:10px; }
+    .btn { background:#00f5d4; color:#111; padding:12px 25px; border-radius:30px; margin-top:20px; font-weight:bold; display:inline-block; }
+
+    /* SECTION */
+    section { padding:80px 20px; max-width:1100px; margin:auto; }
+    h2 { text-align:center; margin-bottom:40px; font-size:2rem; color:#00f5d4; }
+
+    /* ABOUT */
+    .about p { text-align:center; max-width:700px; margin:auto; font-size:1.1rem; line-height:1.8; }
+
+    /* SKILLS */
+    .skills { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
+    .skill {
+      padding:15px 25px; border-radius:15px; background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.2); backdrop-filter:blur(10px); transition:0.3s;
+    }
+    .skill:hover { transform:scale(1.1); background:rgba(0,245,212,0.2); }
+
+    /* PROJECTS */
+    .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
+    .card { perspective:1000px; }
+    .project { height:300px; width:100%; transform-style:preserve-3d; transition:0.8s; }
+    .card:hover .project { transform:rotateY(180deg); }
+    .front, .back {
+      position:absolute; width:100%; height:100%; backface-visibility:hidden;
+      border-radius:15px; overflow:hidden;
+      background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.2);
+      backdrop-filter:blur(15px); display:flex; justify-content:center; align-items:center; flex-direction:column; padding:20px;
+    }
+    .front img { width:100%; height:100%; object-fit:cover; }
+    .back { transform:rotateY(180deg); text-align:center; padding:20px; }
+
+    /* CONTACT */
+    .contact { text-align:center; }
+
+    /* FOOTER */
+    footer {
+      background:rgba(255,255,255,0.05); backdrop-filter:blur(10px);
+      text-align:center; padding:20px; margin-top:50px; border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+    /* LIGHT MODE */
+    .light { background:#f9f9f9; color:#111; }
+    .light header { background:rgba(0,0,0,0.05); }
+    .light footer { background:rgba(0,0,0,0.05); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>Rajeshwari R</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#resume">Resume</a>
+  </nav>
+  <button class="toggle-btn" onclick="toggleTheme()">☀️/🌙</button>
+</header>
+
+<section class="hero" id="home">
+  <h1>Hi, I'm <span id="typing"></span></h1>
+  <p>Fresher Web Developer | Java Developer</p>
+
+  <a href="#projects" class="btn">View My Work</a>
+  <a href="https://drive.google.com/file/d/1FAPWnl_hZljRq3zPZEynvAXmzj-x8F2Y/view?usp=drivesdk" class="btn" download style="margin-left:10px;">Download Resume</a>
+</section>
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>I am a passionate fresher with strong knowledge in Java, SQL, HTML, CSS, and JavaScript. I love creating beautiful UI and building responsive websites. I enjoy solving problems, learning modern tools, and improving my development skills.</p>
+</section>
+
+<section id="skills">
+  <h2>Technical/Software Skills</h2>
+  <div class="skills">
+    <div class="skill">Java</div>
+    <div class="skill">SQL</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Excel</div>
+    <div class="skill">Word</div>
+    <div class="skill">Tally</div>
+    <div class="skill">Eclipse IDE</div>
+    <div class="skill">Visual Studio Code</div>
+    <div class="skill">Oracle SQL</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="card">
+      <div class="project">
+        <div class="front"><img src="https://www.undergroundpress.co.za/templates/yootheme/cache/a5/music--film-editing-wallpaper-a5ce1d1c.jpeg"></div>
+        <div class="back"><h3>SpotStar – Streaming App</h3><p>A hybrid platform combining Spotify + Hotstar features like playlists, movie categories, search, and OTP login.</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="project">
+        <div class="front"><img src="https://img.freepik.com/premium-psd/special-tea-social-media-post-nature-background_667131-263.jpg?semt=ais_hybrid&w=740&q=80"></div>
+        <div class="back"><h3>Tea Station</h3><p>Online tea ordering portal showcasing menu, categories, prices, and recipes with responsive UI.</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="project">
+        <div class="front"><img src="https://www.akira.ai/hubfs/Screenshot%202024-12-09%20at%205.41.30%20PM.png"></div>
+        <div class="back"><h3>Supplier Performance Evaluation</h3><p>Evaluates supplier delivery, cost, quality, and risk to help business decision-making.</p></div>
+      </div>
+    </div>
+<div class="card">
+      <div class="project">
+        <div class="front"><img src="https://assets1.hbsdealer.com/images/v/max_width_1440/s3fs-public/assetbank_2306262169.jpg"></div>
+        <div class="back"><h3>E-Commerce Web Frontend Application</h3><p>Created a responsive Amazon/Myntra-like e-commerce website with product listing, search, filters, and cart UI using HTML, CSS, and JavaScript.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p>Email: <a href="mailto:rajirb1120@gmail.com">rajirb1120@gmail.com</a></p>
+    <p>Phone: 8939495584</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/rajeshwari-r-bb2340363">linkedin.com/in/rajeshwari-r</a></p>
+  </div>
+</section>
+
+<!-- RESUME SECTION -->
+<section id="resume">
+  <!-- <h2>Resume</h2> -->
+  <div style="text-align:center;">
+    <h2>Resume</h2>
+    <P>You can download my resume using the link below</P>
+    <a href="https://drive.google.com/file/d/1FAPWnl_hZljRq3zPZEynvAXmzj-x8F2Y/view?usp=drivesdk" target="_blank" class="btn">View Resume</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Rajeshwari R | Built with 💙</p>
+</footer>
+
+<script>
+let words=["Rajeshwari R","a Developer","a Creator","an Innovator"]; 
+let i=0,j=0,del=false;
+
+function type(){
+  let w=words[i]; 
+  document.getElementById("typing").textContent=w.substring(0,j);
+
+  if(!del && j<w.length){ j++; setTimeout(type,120);}
+  else if(del && j>0){ j--; setTimeout(type,60);}
+  else{
+    del=!del;
+    if(!del){ i=(i+1)%words.length; }
+    setTimeout(type,800);
+  }
+}
+type();
+
+function toggleTheme(){ document.body.classList.toggle("light"); }
+</script>
+
+</body>
+</html>
